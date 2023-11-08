@@ -7,14 +7,14 @@ describe("Transform Numbers", () => {
 
     const numberTransformed = transformToNumber(number);
 
-    expect(numberTransformed).toBeTypeOf("number");
+    expect(numberTransformed).toBe(1).toBeTypeOf("number");
   });
 
-  it("should yield NaN for non-transformable values", () => {
-    const number = "string";
-
-    const numberTransformed = transformToNumber(number);
-
-    expect(numberTransformed).toBeNaN("number");
-  });
+  it.each(["a", {}, 1])(
+    `should yield NaN for non-transformable value, testing: %s`,
+    (value) => {
+      const transformedValue = transformToNumber(value);
+      expect(transformedValue).toBeNaN();
+    }
+  );
 });
