@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { transformToNumber } from "../util/numbers";
 
-describe("Transform Numbers", () => {
+describe("transformToNumbers function", () => {
   it("should transform string number to a number", () => {
     const number = "1";
 
