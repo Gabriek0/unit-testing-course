@@ -10,7 +10,7 @@ describe("Transform Numbers", () => {
     expect(numberTransformed).toBe(1).toBeTypeOf("number");
   });
 
-  it.each(["a", {}, 1])(
+  it.each(["a", {}])(
     `should yield NaN for non-transformable value, testing: %s`,
     (value) => {
       const transformedValue = transformToNumber(value);
