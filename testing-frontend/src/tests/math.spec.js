@@ -45,3 +45,12 @@ it("should throw an error if no value is passed into the function", () => {
   const sumFunction = () => add();
   expect(sumFunction).toThrowError();
 });
+
+it("should throw an error if provided with multiple arguments instead of an array", () => {
+  const value_one = 1;
+  const value_two = 2;
+
+  const sumFunction = () => add(value_one, value_two);
+
+  expect(sumFunction).toThrowError(/iterable/);
+});
